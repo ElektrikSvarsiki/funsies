@@ -78,7 +78,7 @@ public class tapsiriq3 {
 //        Array-ı tərsinə çevirmək taskında .reverse() istifade etməyin yazılıb, burda yazılmayıb
     }
     public static void task6(String string){
-        if(string == new StringBuilder(string).reverse().toString()){
+        if(string.equalsIgnoreCase(new StringBuilder(string).reverse().toString()) ){
             System.out.println(string + " is a palindrome");
         }else System.out.println(string + " is not a palindrome");
 //        Yenə də, reverse istifadə etməyin yazılmayıb. O biri taskda xüsusilə qeyd olunub, ona görə düşündüm ki,
