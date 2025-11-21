@@ -28,7 +28,7 @@ class SubscriberThread extends Thread implements Subscriber {
         while (true) {
             synchronized (publisher) {
                 try {
-                    publisher.wait(); // wait until notified
+                    publisher.wait();
                     update(publisher.getLatestNews());
                     System.out.println(getName() + " received: " + latestNews);
                 } catch (InterruptedException e) {
@@ -51,7 +51,7 @@ class NewsPublisher {
 
     public synchronized void publishNews(String news) {
         latestNews = news;
-        notifyAll(); // wake up all waiting subscribers
+        notifyAll();
     }
 
     public synchronized String getLatestNews() {
